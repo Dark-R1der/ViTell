@@ -1,5 +1,6 @@
 import 'package:chatbot/pages/introduction/controller/introPageController.dart';
 import 'package:chatbot/pages/introduction/widgets/dots.dart';
+import 'package:chatbot/pages/signUp/signIn.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
@@ -65,8 +66,11 @@ class _IntroPageState extends State<IntroPage> {
                     onTap: () {
                       print("page changing");
                       page.chagnePageIndex();
-                      if(page.pageIndex==2){
-                        
+                      if (page.pageIndex == 2) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignInPage()),
+                        );
                       }
                     },
                     child: CircularPercentIndicator(

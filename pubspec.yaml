@@ -66,6 +66,8 @@ flutter:
     - assets/vectorImages/robotIntro1.png
     - assets/vectorImages/robotIntro2.png
     - assets/vectorImages/robotIntro3.png
+    - assets/icons/google.png
+    - assets/vectorImages/avatar.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
