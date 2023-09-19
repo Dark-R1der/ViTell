@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    const ScreenOne(),
+    const ChatPage(),
     const ScreenTwo(),
     const ScreenThree(),
   ];
@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         title:
             Center(child: txt("ChatBot AI", size: 26, weight: FontWeight.w400)),
