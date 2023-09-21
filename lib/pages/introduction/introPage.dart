@@ -64,9 +64,8 @@ class _IntroPageState extends State<IntroPage> {
                   DotsNavigation(),
                   GestureDetector(
                     onTap: () {
-                      print("page changing");
                       page.chagnePageIndex();
-                      if (page.pageIndex == 2) {
+                      if (page.pageIndex == 3) {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => SignInPage()),
@@ -76,7 +75,9 @@ class _IntroPageState extends State<IntroPage> {
                     child: CircularPercentIndicator(
                       radius: 38.0,
                       lineWidth: 1.5,
-                      percent: 0.33 * (page.pageIndex + 1),
+                      percent: (page.pageIndex >= 2)
+                          ? 1
+                          : 0.33 * (page.pageIndex + 1),
                       center: Container(
                         height: 60,
                         width: 60,

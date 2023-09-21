@@ -1,6 +1,7 @@
 import 'package:chatbot/pages/chat/controller/pageChatController.dart';
 import 'package:chatbot/pages/introduction/controller/introPageController.dart';
 import 'package:chatbot/pages/introduction/introPage.dart';
+import 'package:chatbot/pages/organisation/controller/organisationPageController.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,6 +9,7 @@ void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => PageIndex()),
     ChangeNotifierProvider(create: (context) => PageChatController()),
+    ChangeNotifierProvider(create: (context) => OrganisationPageController()),
   ], child: const MyApp()));
 }
 
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'CHATBOT_AI',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const IntroPage(),

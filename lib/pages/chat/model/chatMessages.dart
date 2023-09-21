@@ -6,3 +6,4 @@ class ChatMessage {
     isSender = isSender;
   }
 }
+

@@ -1,18 +1,27 @@
 import 'package:chatbot/pages/chat/chattingPage.dart';
 import 'package:chatbot/pages/chat/controller/pageChatController.dart';
 import 'package:chatbot/pages/chat/emptyChat.dart';
+import 'package:chatbot/serives/backEnd.dart';
+import 'package:chatbot/utils/logger.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
 
   @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
+  @override
   Widget build(BuildContext context) {
+    TextEditingController _textEditingController = TextEditingController();
+    BackendServices _backendServices = BackendServices();
     return Scaffold(
         body: Consumer<PageChatController>(builder: (context, data, child) {
-          return data.isEmpty ? EmptyChat() : ChattingPage();
+          return data.messages.length != 0 ? ChattingPage() : EmptyChat();
         }),
         bottomNavigationBar: Padding(
           padding:
@@ -21,6 +30,7 @@ class ChatPage extends StatelessWidget {
             children: [
               Expanded(
                 child: TextField(
+                  controller: _textEditingController,
                   decoration: InputDecoration(
                     hintText: "Ask me anything...",
                     hintStyle: const TextStyle(
@@ -59,9 +69,21 @@ class ChatPage extends StatelessWidget {
               ),
               Consumer<PageChatController>(builder: (context, data, child) {
                 return InkWell(
-                  onTap: () {
-                    data.changeIsEmpty();
-                    data.checkAdd();
+                  onTap: () async {
+                    String textTobeSent = _textEditingController.text;
+                    _textEditingController.clear();
+                    data.addMessage(
+                        text: textTobeSent, isSender: true);
+                    var responseText = await _backendServices.openAI(
+                        text: textTobeSent);
+                    responseText = responseText.replaceAll('\n\n', "");
+                    Logger.logA("${responseText}");
+                    data.addMessage(
+                      text: responseText,
+                      isSender: false,
+                    );
+                    // Logger.logA(responseText.toString());
+                    // data.changeIsEmpty();
                   },
                   child: Container(
                     height: 60,

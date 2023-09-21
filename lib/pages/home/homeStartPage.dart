@@ -44,15 +44,15 @@ class HomeStartPage extends StatelessWidget {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => const HomePage()),
                     );
                   },
                   child: Container(
                     decoration: BoxDecoration(
                       color: const Color(0xFF17C3CE),
                       borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        const BoxShadow(
+                      boxShadow: const [
+                        BoxShadow(
                           color: Color(0xFF17C3CE), // Shadow color
                           blurRadius: 10, // Spread radius
                           offset: Offset(0, 2), // Offset of the shadow

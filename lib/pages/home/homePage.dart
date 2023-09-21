@@ -1,4 +1,4 @@
-import 'package:chatbot/pages/category/category.dart';
+import 'package:chatbot/pages/organisation/organisationPage.dart';
 import 'package:chatbot/pages/chat/chat.dart';
 import 'package:chatbot/pages/saved/saved.dart';
 import 'package:chatbot/utils/textUtil.dart';
@@ -12,22 +12,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   final List<Widget> _screens = [
+    const OrganisationPage(),
     const ChatPage(),
-    const ScreenTwo(),
     const ScreenThree(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        title:
-            Center(child: txt("ChatBot AI", size: 26, weight: FontWeight.w400)),
-      ),
+          // backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          title: Center(
+              child: txt("ChatBot AI", size: 26, weight: FontWeight.w400))),
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFFF4F4F4),
@@ -40,12 +39,12 @@ class _HomePageState extends State<HomePage> {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.forum),
-            label: 'Chat',
+            icon: Icon(Icons.dataset),
+            label: 'Organisation',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.category),
-            label: 'Category',
+            icon: Icon(Icons.forum),
+            label: 'Chat',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bookmarks),
