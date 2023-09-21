@@ -7,9 +7,15 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => PageIndex()),
-    ChangeNotifierProvider(create: (context) => PageChatController()),
-    ChangeNotifierProvider(create: (context) => OrganisationPageController()),
+    ChangeNotifierProvider(
+      create: (context) => PageIndex(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => PageChatController(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => OrganisationPageController(),
+    ),
   ], child: const MyApp()));
 }
 
