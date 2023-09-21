@@ -16,7 +16,7 @@ class ThreeDotsState extends State<ThreeDots>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 800))
+        vsync: this, duration: const Duration(milliseconds: 250))
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {
           _currentIndex++;
@@ -42,7 +42,7 @@ class ThreeDotsState extends State<ThreeDots>
       animation: _animationController!,
       builder: (context, child) {
         return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: List.generate(3, (index) {
             return Opacity(
               opacity: index == _currentIndex ? 1.0 : 0.2,

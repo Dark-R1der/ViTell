@@ -4,6 +4,7 @@ import 'package:chatbot/pages/chat/emptyChat.dart';
 import 'package:chatbot/serives/backEnd.dart';
 import 'package:chatbot/utils/logger.dart';
 import 'package:chatbot/utils/textUtil.dart';
+import 'package:chatbot/utils/threedot.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +21,19 @@ class _ChatPageState extends State<ChatPage> {
     TextEditingController _textEditingController = TextEditingController();
     BackendServices _backendServices = BackendServices();
     return Scaffold(
+        appBar: AppBar(
+          // backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          title: Consumer<PageChatController>(builder: (context, data, child) {
+            return Center(
+              child: txt(
+                data.title,
+                size: 26,
+                weight: FontWeight.w400,
+              ),
+            );
+          }),
+        ),
         body: Consumer<PageChatController>(builder: (context, data, child) {
           return data.messages.length != 0 ? ChattingPage() : EmptyChat();
         }),
@@ -28,6 +42,7 @@ class _ChatPageState extends State<ChatPage> {
               const EdgeInsets.only(bottom: 12.0, right: 18, left: 18, top: 20),
           child: Row(
             children: [
+              // ThreeDots(),
               Expanded(
                 child: TextField(
                   controller: _textEditingController,
@@ -72,16 +87,27 @@ class _ChatPageState extends State<ChatPage> {
                   onTap: () async {
                     String textTobeSent = _textEditingController.text;
                     _textEditingController.clear();
-                    data.addMessage(
-                        text: textTobeSent, isSender: true);
-                    var responseText = await _backendServices.openAI(
-                        text: textTobeSent);
+                    data.changeStatus();
+                    data.addMessage(text: textTobeSent, isSender: true);
+                    var responseText =
+                        await _backendServices.openAI(text: textTobeSent);
                     responseText = responseText.replaceAll('\n\n', "");
-                    Logger.logA("${responseText}");
+                    // Logger.logA("${responseText}");
+
                     data.addMessage(
                       text: responseText,
                       isSender: false,
                     );
+                    String titlePass = data.messages[0].text +
+                        "Give me a title related to the question here it should be only two words.";
+                    var responseTitle = await _backendServices.openAI(
+                      text: titlePass,
+                    );
+                    responseTitle = responseTitle.replaceAll('\n\n', "");
+                    print(titlePass);
+                    data.titleChange(responseTitle);
+                    responseText = responseText.replaceAll('\n\n', "");
+                    data.changeStatus();
                     // Logger.logA(responseText.toString());
                     // data.changeIsEmpty();
                   },

@@ -22,11 +22,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          // backgroundColor: Colors.white,
-          automaticallyImplyLeading: false,
-          title: Center(
-              child: txt("ChatBot AI", size: 26, weight: FontWeight.w400))),
+      
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFFF4F4F4),

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:chatbot/serives/open_ai.dart';
 import 'package:http/http.dart' as http;
 import 'package:chatbot/utils/logger.dart';
 
@@ -6,6 +7,7 @@ class BackendServices implements Implementlog {
   @override
   // TODO: implement showLogs
   bool get showLogs => true;
+  @override
   void log(message, functionName, {LogType logType = LogType.info}) {
     if (showLogs) return;
 
@@ -42,15 +44,11 @@ class BackendServices implements Implementlog {
     });
     Map<String, String> headers = {
       "Content-Type": "application/json",
-      "Authorization":
-          "Bearer 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",
+      "Authorization": "Bearer ${api + "-" + key}",
     };
     final response = await http.post(url, headers: headers, body: body);
     final jsonResponse = json.decode(response.body);
-    var apiResponse = {
-      "success": true,
-      "text": jsonResponse['choices'][0]['text'],
-    };
+    print(jsonResponse.toString());
     return "${jsonResponse['choices'][0]['text']}";
   }
 }

@@ -18,6 +18,11 @@ class OrganisationPage extends StatelessWidget {
       "Development",
     ];
     return Scaffold(
+      appBar: AppBar(
+          // backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          title: Center(
+              child: txt("Organisations", size: 26, weight: FontWeight.w400))),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
