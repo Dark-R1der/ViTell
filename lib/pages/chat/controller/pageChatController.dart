@@ -13,12 +13,30 @@ class PageChatController with ChangeNotifier {
   List<ChatMessage> messagesCon = [];
   bool isLoading = false;
   List<ChatTile> chatFull = [];
+  List<ChatTile> chatFullSave = [];
   int page = 0;
+  int iconIndex = 0;
   var screenList = [
     const EmptyChat(),
     const ChattingPage(),
     const PreviousChat(),
   ];
+
+  void addSavedChats(
+      {required List<ChatMessage> messages, required String title}) {
+    ChatTile temp = ChatTile(
+        id: DateTime.now().toString(), messages: messages, title: title);
+    chatFullSave.add(temp);
+    print(chatFullSave[0].messages[0].text);
+    notifyListeners();
+    title = "New Chat";
+    // messagesCon.clear();
+  }
+
+  void changeIconIndex(int newIconIndex) {
+    iconIndex = newIconIndex;
+    notifyListeners();
+  }
 
   void pageNewIndex({required int newIndex}) {
     page = newIndex;

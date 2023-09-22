@@ -1,6 +1,6 @@
 import 'package:chatbot/pages/organisation/organisationPage.dart';
 import 'package:chatbot/pages/chat/chat.dart';
-import 'package:chatbot/pages/saved/saved.dart';
+import 'package:chatbot/pages/saved/savedChats.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 
@@ -17,12 +17,11 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _screens = [
     const OrganisationPage(),
     const ChatPage(),
-    const ScreenThree(),
+    const SavedChats(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xFFF4F4F4),
