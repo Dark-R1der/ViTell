@@ -1,5 +1,6 @@
 import 'package:chatbot/pages/chat/controller/pageChatController.dart';
 import 'package:chatbot/serives/backEnd.dart';
+import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,12 +31,34 @@ class _ChatPageState extends State<ChatPage> {
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 0.3 * sizeW,
-                        height: 0.05 * sizeH,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: const Color(0xFF17C3CE),
+                      InkWell(
+                        onTap: () {
+                          data.pageNewIndex(newIndex: 0);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          width: 0.3 * sizeW,
+                          height: 0.05 * sizeH,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: const Color(0xFF17C3CE),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.add,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 0.01 * sizeW,
+                              ),
+                              txt("New Chat",
+                                  size: 14,
+                                  color: Colors.white,
+                                  weight: FontWeight.w600),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -100,13 +123,15 @@ class _ChatPageState extends State<ChatPage> {
                               text: responseText,
                               isSender: false,
                             );
-                            String titlePass = data.messages[0].text +
+                            String titlePass = data.messagesCon[0].text +
                                 "Give me a title related to the question here it should be only two words.";
                             var responseTitle = await backendServices.openAI(
                               text: titlePass,
                             );
                             responseTitle =
                                 responseTitle.replaceAll('\n\n', "");
+                            responseTitle = responseTitle.substring(
+                                1, responseTitle.length - 1);
                             data.titleChange(responseTitle);
                             responseText = responseText.replaceAll('\n\n', "");
                             data.changeStatus();

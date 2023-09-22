@@ -17,10 +17,9 @@ class ChattingPage extends StatelessWidget {
               return IconButton(
                 onPressed: () {
                   data.addChat(
-                    messages: data.messages,
+                    messages: data.messagesCon,
                     title: data.title,
                   );
-                  data.emptyMessage();
                   data.pageNewIndex(newIndex: 2);
                 },
                 icon: const Icon(
@@ -50,7 +49,7 @@ class ChattingPage extends StatelessWidget {
                 return InkWell(
                   onTap: () {
                     data.addChat(
-                      messages: data.messages,
+                      messages: data.messagesCon,
                       title: data.title,
                     );
                     data.emptyMessage();
@@ -82,15 +81,15 @@ class ChattingPage extends StatelessWidget {
                     separatorBuilder: (context, index) => const SizedBox(
                       height: 20,
                     ),
-                    itemCount:
-                        data.messages.length + 1, // Add 1 for the extra widget
+                    itemCount: data.messagesCon.length +
+                        1, // Add 1 for the extra widget
                     itemBuilder: (BuildContext context, int index) {
-                      if (index == data.messages.length) {
+                      if (index == data.messagesCon.length) {
                         return data.isLoading
                             ? const ThreeDots()
                             : const SizedBox();
                       } else {
-                        return MessageTile(message: data.messages[index]);
+                        return MessageTile(message: data.messagesCon[index]);
                       }
                     },
                   ),

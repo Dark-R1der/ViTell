@@ -1,5 +1,6 @@
 import 'package:chatbot/pages/chat/controller/pageChatController.dart';
 import 'package:chatbot/pages/chat/widget/previous_chat_tile.dart';
+import 'package:chatbot/utils/logger.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -52,56 +53,75 @@ class _PreviousChatState extends State<PreviousChat> {
                     separatorBuilder: (context, index) => const SizedBox(
                       height: 20,
                     ),
-                    itemCount: data.chat.length,
+                    itemCount: data.chatFull.length,
                     itemBuilder: (context, index) {
-                      final item = data.chat[index].title;
-                      return Dismissible(
-                        key: Key(item), // Unique key for each item
-                        onDismissed: (direction) {
-                          setState(() {
-                            data.chat.removeAt(index);
-                            // Check if the list is empty and update the current page index if needed
-                            if (data.chat.isEmpty) {
-                              data.pageNewIndex(newIndex: 0);
-                            }
-                          });
+                      final item = data.chatFull[index].title;
+                      return InkWell(
+                        onTap: () {
+                          // Logger.logA("${data.chatFull[0].messages[0].text}");
+                          // for (int i = 0; i < data.chatFull.length; i++) {
+                          //   for (int j = 0;
+                          //       j < data.chatFull[i].messages.length;
+                          //       j++) {
+                          //     Logger.logH(
+                          //         "${data.chatFull[i].messages[j].text}");
+                          //     data.addMessage(
+                          //         isSender:
+                          //             data.chatFull[i].messages[j].isSender,
+                          //         text: data.chatFull[i].messages[j].text);
+                          //   }
+                          // }
+                          // print(data.messagesCon);
+                          data.pageNewIndex(newIndex: 1);
                         },
-                        background: Container(
-                          // color: Colors.red, // Background color when swiping
-                          alignment: Alignment.centerRight,
-                          padding: const EdgeInsets.only(right: 20.0),
-                          // color: Colors.red, // Background color when swiping
-                          child: const Icon(
-                            Icons.delete,
-                            color: Colors.red,
-                            size: 30,
-                          ),
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: const Color(0xFFF5F5F5),
-                          ),
-                          child: ListTile(
-                            title: txt(
-                              data.chat[index].title,
-                              weight: FontWeight.w600,
-                              size: 0.026 * sizeH,
-                              textAlign: TextAlign.left,
+                        child: Dismissible(
+                          key: Key(item), // Unique key for each item
+                          onDismissed: (direction) {
+                            setState(() {
+                              data.chatFull.removeAt(index);
+                              // Check if the list is empty and update the current page index if needed
+                              if (data.chatFull.isEmpty) {
+                                data.pageNewIndex(newIndex: 0);
+                              }
+                            });
+                          },
+                          background: Container(
+                            // color: Colors.red, // Background color when swiping
+                            alignment: Alignment.centerRight,
+                            padding: const EdgeInsets.only(right: 20.0),
+                            // color: Colors.red, // Background color when swiping
+                            child: const Icon(
+                              Icons.delete,
+                              color: Colors.red,
+                              size: 30,
                             ),
-                            subtitle: txt(
-                              message,
-                              size: 0.014 * sizeH,
-                              textAlign: TextAlign.left,
-                              color: const Color(0xFFBBBBBB),
-                              maxLine: 2,
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              color: const Color(0xFFF5F5F5),
                             ),
-                            trailing: const IconButton(
-                                onPressed: null,
-                                icon: Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.black,
-                                )),
+                            child: ListTile(
+                              title: txt(
+                                data.chatFull[index].title,
+                                weight: FontWeight.w600,
+                                size: 0.026 * sizeH,
+                                textAlign: TextAlign.left,
+                              ),
+                              subtitle: txt(
+                                message,
+                                size: 0.014 * sizeH,
+                                textAlign: TextAlign.left,
+                                color: const Color(0xFFBBBBBB),
+                                maxLine: 2,
+                              ),
+                              trailing: const IconButton(
+                                  onPressed: null,
+                                  icon: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.black,
+                                  )),
+                            ),
                           ),
                         ),
                       );

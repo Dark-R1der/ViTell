@@ -1,0 +1,166 @@
+{
+    "sections": [
+      {
+        
+        "title": "Security",
+        "items": [
+          {
+            "name": "Intelligence Bureau",
+            "imageurl": "https://www.javatpoint.com/fullformpages/images/ib.png",
+            "description": "India's internal security and counter-intelligence agency under the Ministry of Home Affairs"
+          },
+          {
+            "name": "Research and Analysis Wing",
+            "imageurl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTkLn-uOMtB_7nXjIR4vHdHOzd8LxwETshWWum-qMiA0Wga16Z8",
+            "description": "Foreign intelligence agency of India for gathering foreign intelligence and countering terrorism."
+          },
+          {
+            "name": "Defence Intelligence Agency",
+            "imageurl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTKEWYAl6bJGRJlH-O23V1pUN6gi7liA6JInDJYX0Yl4YuOFuSa",
+            "description": "Intelligence agency responsible for providing and coordinating defence and military intelligence to the Indian Armed Forces."
+          },
+          {
+            "name": "Central Bureau of Investigation",
+            "imageurl": "https://seeklogo.com/images/C/cbi-logo-AE7D5CBC3B-seeklogo.com.png",
+            "description": "Domestic crime investigating agency of India. It operates under the jurisdiction of the Ministry of Personnel, Public Grievances and Pensions."
+          },
+          {
+            "name": "Directorate of Air Intelligence",
+            "imageurl": "https://www.ssbcrack.com/wp-content/uploads/2016/05/af_crest-300x252.gif",
+            "description": "Intelligence arm of the Indian Air Force. It provides timely, accurate, and synchronized intelligence support for tactical, operational needs of the Air force."
+          },
+          {
+            "name": "Indian Police Service",
+            "imageurl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTSSBCEBMcfy92wiqCkmHBAXs6Vw40pjBJMPgot1xWv0ECeWGwH",
+            "description": "Civil service under the All India Services. It replaced the Imperial Police in 1948."
+          },
+          {
+            "name": "Bureau of Police Research and Development",
+            "imageurl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQPj7YfVof0eu0fCBKWGNX2aVDDjgtWOYKL9XYwPAFpp0d5OguP",
+            "description": "Set up on 28 August 1970 in furtherance of the objective of the Government of India for the modernization of police forces."
+          },
+          {
+            "name": "Wildlife Crime Control Bureau",
+            "imageurl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ75CazuLGIRv97es71QzoP_Z8yFhI4i05fms3WCTXiqDM_Jyy",
+            "description": "Statutory body established by the Government of India under the Ministry of Environment, Forest and Climate Change to combat organized wildlife crime."
+          },
+          {
+            "name": "National Technical Research Organisation",
+            "imageurl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/National_Technical_Research_Organisation.svg/220px-National_Technical_Research_Organisation.svg.png",
+            "description": "Technical intelligence agency under the National Security Advisor in the Prime Minister's Office, India."
+          },
+          {
+            "name": "National Crime Records Bureau",
+            "imageurl": "https://upload.wikimedia.org/wikipedia/en/1/13/National_Crime_Records_Bureau_Logo.png",
+            "description": "Indian government agency responsible for collecting and analyzing crime data as defined by the Indian Penal Code and Special and Local Laws."
+          },
+          {
+            "name": "National Disaster Response Force",
+            "imageurl": "https://upload.wikimedia.org/wikipedia/en/d/d2/National_Disaster_Response_Force_Logo.png",
+            "description": "Indian specialized force constituted 'for the purpose of special response to a threatening disaster situation or disaster' under the Disaster Management Act, 2005."
+          }
+        ]
+      },
+      {
+        "title": "Central Forensic",
+        "items": [
+          {
+            "name": "National Institute of Criminology and Forensic Science",
+            "imageurl": "https://upload.wikimedia.org/wikipedia/en/4/4c/National_Institute_of_Criminology_%26_Forensic_Science_%28emblem%29.png",
+            "description": "Trains in cybercrime investigations and researches aspects of criminology and forensics (including cyberforensics)"
+          },
+          {
+            "name": "Central Forensic Science Laboratory",
+            "imageurl": "https://media.9curry.com/uploads/organization/image/1451/cfsl-cbi-logo.jpg",
+            "description": "A wing of the Ministry of Home Affairs, houses the only DNA repository in South and Southeast Asia."
+          }
+        ]
+      },
+      {
+        "title": "Financial and Intelligence",
+        "items": [
+          {
+            "name": "Income Tax Department",
+            "imageurl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Logo_of_Income_Tax_Department_India.png",
+            "description": "India's premier financial agency, responsible for a wide variety of financial and fiscal matters."
+          },
+          {
+            "name": "Enforcement Directorate Agency",
+            "imageurl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Enforcement_Directorate.svg/1200px-Enforcement_Directorate.svg.png",
+            "description": "Domestic law enforcement agency and economic intelligence agency responsible for enforcing economic laws and fighting economic crime in India."
+          },
+          {
+            "name": "Reserve Bank of India",
+            "imageurl": "https://i.pinimg.com/originals/12/a5/59/12a5596b6cdd063713cfe0c298fd832e.png",
+            "description": "India's central bank responsible for monetary policy and currency issuance."
+          },
+          {
+            "name": "Directorate of Revenue Intelligence",
+            "imageurl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Directorate_of_Revenue_Intelligence_Logo.png",
+            "description": "Intelligence-based organization responsible for the coordination of India's anti-smuggling efforts."
+          },
+          {
+            "name": "Securities and Exchange Board of India",
+            "imageurl": "https://www.livelaw.in/h-upload/2019/08/28/1600x960_363738-sebi.jpg",
+            "description": "Regulatory body for securities and commodity market in India under the ownership of the Ministry of Finance within the Government of India."
+          },
+          {
+            "name": "Goods and Services Tax Council",
+            "imageurl": "https://pbs.twimg.com/profile_images/864158264010854401/VKNw8m6A.jpg",
+            "description": "Constitutional body responsible for making recommendations on issues related to the implementation of the Goods and Services Tax (GST) in India."
+          }
+        ]
+      },
+      {
+        "title": "Health and Welfare",
+        "items": [
+          {
+            "name": "Indian Council of Medical Research",
+            "imageurl": "https://seeklogo.com/images/I/indian-council-of-medical-research-logo-95082A4FC3-seeklogo.com.png",
+            "description": "Coordinates and promotes biomedical research in India."
+          },
+          {
+            "name": "National Health Mission",
+            "imageurl": "https://seeklogo.com/images/N/national-health-mission-logo-56CB075B4D-seeklogo.com.png",
+            "description": "Implements healthcare programs at the state level."
+          },
+          {
+            "name": "National AIDS Control Organization",
+            "imageurl": "https://presentations.gov.in/presgov_new/wp-content/uploads/2020/06/NACO_Preview.png?x42937",
+            "description": "Works to prevent and control HIV/AIDS in India."
+          }
+        ]
+      },
+      {
+        "title": "Educational and Research",
+        "items": [
+          {
+            "name": "University Grants Commission",
+            "imageurl": "https://assets.thehansindia.com/h-upload/2021/12/05/1600x960_1125112-ugc.jpg",
+            "description": "Regulates and funds higher education institutions."
+          }
+        ]
+      },
+      {
+        "title": "Space and Research",
+        "items": [
+          {
+            "name": "Indian Space Research Organisation",
+            "imageurl": "https://th-i.thgim.com/public/sci-tech/science/l3ao7x/article67158158.ece/alternates/FREE_1200/Indian_Space_Research_Organisation_Logo.png",
+            "description": "Operates as the primary research and development arm of the Department of Space, which is directly overseen by the Prime Minister of India."
+          }
+        ]
+      },
+      {
+        "title": "Scientific and Industrials",
+        "items": [
+          {
+            "name": "Council of Scientific and Industrial Research",
+            "imageurl": "https://d2cbg94ubxgsnp.cloudfront.net/Pictures/1024x536/0/7/1/134071_Council-of-Scientific-and-Industrial-Research-logo---original_WV.jpg",
+            "description": "Promotes scientific research and development."
+          }
+        ]
+      }
+    ]
+  }
+  

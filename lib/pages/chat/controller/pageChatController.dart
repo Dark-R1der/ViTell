@@ -10,9 +10,9 @@ import 'package:flutter/foundation.dart';
 class PageChatController with ChangeNotifier {
   String title = "ChatBOT_AI";
   bool isEmpty = true;
-  List<ChatMessage> messages = [];
+  List<ChatMessage> messagesCon = [];
   bool isLoading = false;
-  List<ChatTile> chat = [];
+  List<ChatTile> chatFull = [];
   int page = 0;
   var screenList = [
     const EmptyChat(),
@@ -26,14 +26,20 @@ class PageChatController with ChangeNotifier {
   }
 
   void addChat({required List<ChatMessage> messages, required String title}) {
-    ChatTile temp = ChatTile(messages: messages, title: title);
-    chat.add(temp);
+    // Logger.logH(messages[0].text);
+    ChatTile temp = ChatTile(
+        id: DateTime.now().toString(), messages: messages, title: title);
+    chatFull.add(temp);
+    // Logger.logA(chatFull[0].messages[0].text);
+    print(chatFull[0].messages[0].text);
     notifyListeners();
+    title = "New Chat";
+    // messagesCon.clear();
   }
 
   void removeChat({required int removeIndex}) {
-    chat.removeAt(removeIndex);
-    if (chat.isEmpty) {
+    chatFull.removeAt(removeIndex);
+    if (chatFull.isEmpty) {
       pageNewIndex(newIndex: 0);
     }
     notifyListeners();
@@ -46,13 +52,13 @@ class PageChatController with ChangeNotifier {
 
   void titleChange(String newTitle) {
     title = newTitle;
-    Logger.logA(newTitle);
+    // Logger.logA(newTitle);
     notifyListeners();
   }
 
   void addMessage({required String text, required bool isSender}) {
     ChatMessage message = ChatMessage(text, isSender);
-    messages.add(message);
+    messagesCon.add(message);
     notifyListeners();
   }
 
@@ -63,7 +69,7 @@ class PageChatController with ChangeNotifier {
 
   void emptyMessage() {
     title = "New Chat";
-    messages.clear();
+    // messages.clear();
     notifyListeners();
   }
 }
