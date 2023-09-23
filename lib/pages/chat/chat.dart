@@ -20,7 +20,9 @@ class _ChatPageState extends State<ChatPage> {
     double sizeW = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Consumer<PageChatController>(builder: (context, data, child) {
-        return data.screenList[data.page];
+        return Stack(children: [
+          data.screenList[data.page],
+        ]);
       }),
       bottomNavigationBar: Padding(
         padding:
@@ -28,40 +30,46 @@ class _ChatPageState extends State<ChatPage> {
         child: Consumer<PageChatController>(
           builder: (context, data, child) {
             return (data.page == 2)
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          data.pageNewIndex(newIndex: 0);
-                        },
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          width: 0.3 * sizeW,
-                          height: 0.05 * sizeH,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: const Color(0xFF17C3CE),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.add,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 0.01 * sizeW,
-                              ),
-                              txt("New Chat",
-                                  size: 14,
+                ? Container(
+                    padding: EdgeInsets.only(
+                      bottom: 16,
+                    ),
+                    color: Colors.transparent,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            data.pageNewIndex(newIndex: 0);
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(8),
+                            width: 0.15 * sizeW,
+                            height: 0.055 * sizeH,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: const Color.fromARGB(255, 13, 90, 96),
+                            ),
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.add,
                                   color: Colors.white,
-                                  weight: FontWeight.w600),
-                            ],
+                                ),
+                                // SizedBox(
+                                //   width: 0.01 * sizeW,
+                                // ),
+                                // txt("New Chat",
+                                //     size: 14,
+                                //     color: Colors.white,
+                                //     weight: FontWeight.w600),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   )
                 : Row(
                     children: [
@@ -143,11 +151,11 @@ class _ChatPageState extends State<ChatPage> {
                             width: 60,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(60),
-                                color: const Color(0xFF17C3CE),
+                                color: Color.fromARGB(255, 13, 90, 96),
                                 boxShadow: const [
                                   BoxShadow(
                                       blurRadius: 4,
-                                      color: Color(0xFF17C3CE),
+                                      color: Color.fromARGB(255, 13, 90, 96),
                                       offset: Offset(0, 2))
                                 ]),
                             child: Center(
@@ -157,6 +165,9 @@ class _ChatPageState extends State<ChatPage> {
                           ),
                         );
                       }),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                     ],
                   );
           },

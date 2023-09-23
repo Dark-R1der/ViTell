@@ -8,7 +8,7 @@ import 'package:chatbot/utils/logger.dart';
 import 'package:flutter/foundation.dart';
 
 class PageChatController with ChangeNotifier {
-  String title = "ChatBOT_AI";
+  String title = "GovBuddy";
   bool isEmpty = true;
   List<ChatMessage> messagesCon = [];
   bool isLoading = false;

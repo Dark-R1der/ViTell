@@ -51,4 +51,14 @@ class BackendServices implements Implementlog {
     print(jsonResponse.toString());
     return "${jsonResponse['choices'][0]['text']}";
   }
+
+  Future<Map<String, dynamic>> getNew() async {
+    var urlString =
+        "https://newsapi.org/v2/everything?q=tesla&from=2023-08-23&sortBy=publishedAt&apiKey=a5c8a99e0c84405b8b28b4403b4b4914";
+    var url = Uri.parse(urlString);
+    final response = await http.get(url);
+    final jsonResponse = json.decode(response.body);
+    // print(jsonResponse.toString());
+    return jsonResponse;
+  }
 }

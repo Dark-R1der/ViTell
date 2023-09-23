@@ -1,6 +1,7 @@
 import 'package:chatbot/pages/introduction/controller/introPageController.dart';
 import 'package:chatbot/pages/introduction/widgets/dots.dart';
 import 'package:chatbot/pages/signUp/signIn.dart';
+import 'package:flutter_screen_lock/flutter_screen_lock.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
@@ -110,6 +111,7 @@ class IntroPage0 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(
           height: 80,
@@ -123,13 +125,19 @@ class IntroPage0 extends StatelessWidget {
         const SizedBox(
           height: 40,
         ),
-        txt("Introduction to 0", isBold: true, size: 32, color: Colors.white),
-        txt("ChatBot_AI", isBold: true, size: 32, color: Colors.white),
+        txt("Meet", isBold: true, size: 32, color: Colors.white),
+        txt(
+          "GovBuddy",
+          isBold: true,
+          size: 32,
+          color: Colors.white,
+          textAlign: TextAlign.left,
+        ),
         const SizedBox(
           height: 10,
         ),
-        txt("Meet Chatbot, your personal AI language model & discover the benefits of using Chatbot_AI for language tasks",
-            size: 16, color: Colors.white),
+        txt("Your personal helpdesk, here to enchance the interaction between you and other government bodies",
+            size: 16, color: Colors.white, textAlign: TextAlign.left),
         const SizedBox(
           height: 80,
         ),
@@ -144,6 +152,7 @@ class IntroPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(
           height: 80,
@@ -155,18 +164,24 @@ class IntroPage1 extends StatelessWidget {
               child: Image.asset('assets/vectorImages/robotIntro2.png')),
         ),
         const SizedBox(
-          height: 40,
+          height: 60,
         ),
-        txt("Explore categories of",
-            isBold: true, size: 32, color: Colors.white),
-        txt("all topics", isBold: true, size: 32, color: Colors.white),
+        txt("Future of Collaboration",
+            isBold: true,
+            size: 32,
+            color: Colors.white,
+            textAlign: TextAlign.left),
         const SizedBox(
           height: 10,
         ),
-        txt("Ask question to chatbot_AI with help of different categories and get answer that you want.",
-            size: 16, color: Colors.white),
+        txt(
+          "Seamlessly integrating document management, and AI-driven decision making",
+          size: 16,
+          color: Colors.white,
+          textAlign: TextAlign.left,
+        ),
         const SizedBox(
-          height: 80,
+          height: 84,
         ),
       ],
     );
@@ -184,29 +199,36 @@ class IntroPage2 extends StatelessWidget {
         duration: Duration(milliseconds: 500),
         opacity: index == 2 ? 1 : 0,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 80,
             ),
             Center(
               child: Container(
-                  height: 335,
-                  width: 335,
+                  height: 325,
+                  width: 325,
                   child: Image.asset('assets/vectorImages/robotIntro3.png')),
             ),
             const SizedBox(
-              height: 40,
+              height: 60,
             ),
-            txt("Getting started with",
-                isBold: true, size: 32, color: Colors.white),
-            txt("ChatBot_AI", isBold: true, size: 32, color: Colors.white),
+            txt("Interactive Multilingual Conversion",
+                isBold: true,
+                size: 30,
+                color: Colors.white,
+                textAlign: TextAlign.left),
             const SizedBox(
-              height: 10,
+              height: 15,
             ),
-            txt("Try out different language tasks and modes.",
-                size: 16, color: Colors.white),
+            txt(
+              "Facilitates multilingual communication for government employees.",
+              size: 16,
+              color: Colors.white,
+              textAlign: TextAlign.left,
+            ),
             const SizedBox(
-              height: 124,
+              height: 100,
             ),
           ],
         ),

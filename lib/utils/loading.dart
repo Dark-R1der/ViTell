@@ -23,7 +23,9 @@ class _LoaderWidgetState extends State<LoaderWidget> {
                 width: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(400),
-                  color: index.isEven ? Color(0xFF2196F3) : Color(0xFFD0F9F9),
+                  color: index.isEven
+                      ? Color.fromARGB(255, 25, 197, 209)
+                      : Color.fromARGB(255, 13, 90, 96),
                 ),
               );
             },
