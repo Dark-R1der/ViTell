@@ -18,7 +18,7 @@ class _PreviousChatState extends State<PreviousChat> {
   Widget build(BuildContext context) {
     String title = "Title 1";
     String message =
-        "Message 1 Hello how are you hope you are doing file please fuck off as soon as possible kindly fuck";
+        "Hello hope you are doing fine today? I am AI an model so I don't feel any emotion";
 
     // double _positionX = 0.0;
     double sizeH = MediaQuery.of(context).size.height;
