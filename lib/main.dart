@@ -2,15 +2,19 @@ import 'package:chatbot/pages/chat/controller/pageChatController.dart';
 import 'package:chatbot/pages/home/controller/homepage_controller.dart';
 import 'package:chatbot/pages/introduction/controller/introPageController.dart';
 import 'package:chatbot/pages/introduction/introPage.dart';
+import 'package:chatbot/pages/notification/controller/notification_controller.dart';
 import 'package:chatbot/pages/organisation/controller/organisationPageController.dart';
+import 'package:chatbot/utils/colorData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
+import 'pages/inter_department_chats/controller/inter_department_chat_controller.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Color(0xFF16C3CE), // Set status bar color
-      systemNavigationBarColor: Color(0xFF16C3CE) // Set navigation bar color
+      systemNavigationBarColor:ColorData.themeColor,
       ));
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(
@@ -21,6 +25,12 @@ void main() {
     ),
     ChangeNotifierProvider(
       create: (context) => OrganisationPageController(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => NotificationController(),
+    ),
+    ChangeNotifierProvider(
+      create: (context) => InterDepartmentChatController(),
     ),
     ChangeNotifierProvider(
       create: (context) => HomePageController(),

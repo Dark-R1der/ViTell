@@ -1,5 +1,5 @@
 import 'package:chatbot/pages/chat/controller/pageChatController.dart';
-import 'package:chatbot/serives/backEnd.dart';
+import 'package:chatbot/services/backEnd.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

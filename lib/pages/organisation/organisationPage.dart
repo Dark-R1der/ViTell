@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:chatbot/pages/news/news.dart';
 import 'package:chatbot/pages/organisation/controller/organisationPageController.dart';
 import 'package:chatbot/pages/organisation/model/organisation_details.dart';
-import 'package:chatbot/serives/backEnd.dart';
+import 'package:chatbot/services/backEnd.dart';
 import 'package:chatbot/utils/logger.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
