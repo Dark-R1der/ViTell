@@ -75,63 +75,11 @@ class _OrganisationPageState extends State<OrganisationPage> {
     Random random = Random();
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.abc,
-          color: Colors.white,
-          size: 30,
-        ),
-        // backgroundColor: Colors.white,
+        centerTitle: true,
         automaticallyImplyLeading: false,
-        title: Center(
-          child: txt("Organisations", size: 26, weight: FontWeight.w400),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () async {
-              var response = await _backendServices.getNew();
-              List<String> newsTitle = [
-                "என் கணவரே எங்களை மறுபடியும்",
-                "கோடி வசூலை நெருங்கும் ஜவான் படத்திற்கு முன்னணி",
-                "அதே மாதிரி விக்கெட் கீப்பர்.. அதே மாதிரி கேப்டன்.. அதே மாதிரி"
-              ];
-              List<String> newsArticle = [
-                "உதவி இயக்குநர் டு இயக்குநர்: அஜித்தின் வாலி படத்தில் ஒரு காட்சியில் நடித்த மாரிமுத்து இயக்குநர் மிஷ்கின் இயக்கிய யுத்தம் செய் படத்தில் நடிகராக அறிமுகமானார். பிரசன்னாவை வைத்து கண்ணும் கண்ணும் படத்தை இயக்கி இயக்குநராக மாறிய மாரிமுத்து புலிவால் படத்திற்கு பிறகு சினிமாவை இயக்கும் ஆசையையே விட்டுவிட்டார்",
-                "வெளியான ஜவான் திரைப்படம் வசூல் ரீதியாக மிகப்பெரிய சாதனை படைத்து வருகிறது. இப்படம் உலகளவில் 1000 கோடி வசூல் நெருங்கியுள்ள நிலையில், இப்படத்தில் நடித்த பிரபலங்கள் இப்படத்திற்காக பெற்ற சம்பள விவரங்கள் இங்கு பட்டியலிடப்பட்டுள்ளது. முழு விவரங்கள் இதோ.",
-                "அதே மாதிரி விக்கெட் கீப்பர்.. அதே மாதிரி கேப்டன்.. அதே மாதிரி"
-              ];
-              List<String> newImageUrl = [];
-              List<dynamic> articles = response['articles'];
-              for (var article in articles) {
-                String title = article['title'];
-                newsTitle.add(title);
-                String art = article['description'];
-                newsArticle.add(art);
-                String data = article["publishedAt"];
-                newImageUrl.add(data);
-              }
-              // for (var article in articles) {
-              // }
-              // for (var article in articles) {
-              //   String title = article['urlToImage'];
-              //   newImageUrl.add(title);
-              // }
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => NewPage(
-                          newsTitle: newsTitle,
-                          newsArticle: newsArticle,
-                          newsImageUrl: newImageUrl,
-                        )),
-              );
-            },
-            icon: Icon(
-              Icons.newspaper,
-              color: Color.fromARGB(255, 13, 90, 96),
-              size: 30,
-            ),
-          )
-        ],
+        title: txt("Organisations", size: 26, weight: FontWeight.w400),
+
+
       ),
       body: FutureBuilder<void>(
         future: loadJsonData(),

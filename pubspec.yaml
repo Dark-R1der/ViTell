@@ -46,6 +46,7 @@ dependencies:
   cached_network_image: ^3.2.3
   salomon_bottom_bar: ^3.3.2
   fluid_bottom_nav_bar: ^1.4.0
+  scaled_list: ^2.0.0
 
 dev_dependencies:
   flutter_test:

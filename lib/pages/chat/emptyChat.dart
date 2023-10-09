@@ -76,12 +76,21 @@ class EmptyChat extends StatelessWidget {
                 Consumer<PageChatController>(builder: (context, data, child) {
                   return Expanded(
                     child: ListView.separated(
+                      physics: NeverScrollableScrollPhysics(),
                       separatorBuilder: (context, index) => const SizedBox(
                         height: 20,
                       ),
                       itemCount:
-                          sampleText.length, // Number of items in the list
+                          sampleText.length + 1, // Number of items in the list
                       itemBuilder: (BuildContext context, int index) {
+                        if(sampleText.length == index){
+                          return txt(
+                            "This is example that what can I do fo",
+                            color: const Color(0xFF9E9E9E),
+                            size: 16,
+                            weight: FontWeight.w400,
+                          );
+                        }
                         // Create a ListTile for each item in the list
                         return InkWell(
                           onTap: () async {
@@ -118,12 +127,7 @@ class EmptyChat extends StatelessWidget {
                     ),
                   );
                 }),
-                txt(
-                  "This is example that what can I do fo",
-                  color: const Color(0xFF9E9E9E),
-                  size: 16,
-                  weight: FontWeight.w400,
-                ),
+
                 const SizedBox(
                   height: 20,
                 ),
