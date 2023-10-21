@@ -55,130 +55,156 @@ class _NewPageState extends State<NewPage> {
         centerTitle: true,
         title: txt(
           "News",
-          weight: FontWeight.w500,
-          size: 24,
+          weight: FontWeight.w600,
+          size: 26,
         ),
       ),
-      body: Column(
-        children: [
-          Consumer<NewsController>(
-            builder: (context, data, child) {
-              return CarouselSlider(
-                options: CarouselOptions(
-                  height: 200.0,
-                  enlargeCenterPage: true,
-                  autoPlay: true,
-                  aspectRatio: 12 / 9,
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  enableInfiniteScroll: true,
-                  autoPlayAnimationDuration: Duration(milliseconds: 600),
-                  viewportFraction: 0.8,
-                  onPageChanged: (index, reason) {
-                    data.changeCenterSliderIndex(index);
-                  },
-                ),
-                items: photoList
-                    .map(
-                      (item) => Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              image: NetworkImage(item), fit: BoxFit.cover),
-                        ),
-                      ),
-                    )
-                    .toList(),
-              );
-            },
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Consumer<NewsController>(
-            builder: (context, data, child) {
-              return AnimatedSmoothIndicator(
-                onDotClicked: (index) {
-                  data.changeCenterSliderIndex(index);
-                },
-                activeIndex: data.centerSliderIndex,
-                count: photoList.length,
-                effect: ExpandingDotsEffect(
-                  activeDotColor: ColorData.themeColor,
-                  dotColor: Colors.grey,
-                  dotHeight: 12,
-                  dotWidth: 12,
-                  spacing: 4,
-                ),
-              );
-            },
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 8.0, right: 12, left: 12),
-              child: ListView.separated(
-                physics: BouncingScrollPhysics(),
-                itemCount: sampleNewLength + 1,
-                separatorBuilder: (context, index) => const SizedBox(
-                  height: 20,
-                ),
-                itemBuilder: (context, index) {
-                  if (sampleNewLength == index) {
-                    return SizedBox(
-                      height: 60,
-                    );
-                  }
-                  return Container(
-                    height: 90,
-                    width: 100,
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: ColorData.textColorGrey,
-                      borderRadius: BorderRadius.circular(20),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Container(
+          height: sampleNewLength * 118.0 + 300.0,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: txt("Top News", weight: FontWeight.w500, size: 24),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Consumer<NewsController>(
+                builder: (context, data, child) {
+                  return CarouselSlider(
+                    options: CarouselOptions(
+                      height: 200.0,
+                      enlargeCenterPage: true,
+                      autoPlay: true,
+                      aspectRatio: 12 / 9,
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enableInfiniteScroll: true,
+                      autoPlayAnimationDuration: Duration(milliseconds: 600),
+                      viewportFraction: 0.8,
+                      onPageChanged: (index, reason) {
+                        data.changeCenterSliderIndex(index);
+                      },
                     ),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            txt(
-                              "New title + ${index}",
-                              weight: FontWeight.w500,
-                              size: 24,
+                    items: photoList
+                        .map(
+                          (item) => Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                  image: NetworkImage(item), fit: BoxFit.cover),
                             ),
-                            Container(
-                              width: 300,
-                              child: txt(
-                                "Some description for the news just to give a breif of what exactly is the news about and orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-                                weight: FontWeight.w500,
-                                maxLine: 2,
-                                size: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                "https://www.hindustantimes.com/ht-img/img/2023/08/18/550x309/ANI-20230817006-0_1692392764192_1692392789439.jpg",
-                              ),
-                              fit: BoxFit.cover,
-                            ),
-                            color: Colors.amber,
                           ),
                         )
-                      ],
+                        .toList(),
+                  );
+                },
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Consumer<NewsController>(
+                builder: (context, data, child) {
+                  return Center(
+                    child: AnimatedSmoothIndicator(
+                      onDotClicked: (index) {
+                        data.changeCenterSliderIndex(index);
+                      },
+                      activeIndex: data.centerSliderIndex,
+                      count: photoList.length,
+                      effect: ExpandingDotsEffect(
+                        activeDotColor: ColorData.themeColor,
+                        dotColor: Colors.grey,
+                        dotHeight: 12,
+                        dotWidth: 12,
+                        spacing: 4,
+                      ),
                     ),
                   );
                 },
               ),
-            ),
-          )
-        ],
+              // SizedBox(
+              //   height: 10,
+              // ),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: txt("Headlines", weight: FontWeight.w500, size: 24),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0, right: 12, left: 12),
+                  child: ListView.separated(
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: sampleNewLength + 1,
+                    separatorBuilder: (context, index) => const SizedBox(
+                      height: 20,
+                    ),
+                    itemBuilder: (context, index) {
+                      if (sampleNewLength == index) {
+                        return SizedBox(
+                          height: 60,
+                        );
+                      }
+                      return Container(
+                        height: 90,
+                        width: 100,
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: ColorData.textColorGrey,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                txt(
+                                  "New title ${index}",
+                                  weight: FontWeight.w500,
+                                  size: 24,
+                                ),
+                                Container(
+                                  width: 300,
+                                  child: txt(
+                                    "Some description for the news just to give a breif of what exactly is the news about and orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                                    weight: FontWeight.w500,
+                                    maxLine: 2,
+                                    // color: Col,
+                                    size: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Spacer(),
+                            Container(
+                              height: 60,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                    "https://www.hindustantimes.com/ht-img/img/2023/08/18/550x309/ANI-20230817006-0_1692392764192_1692392789439.jpg",
+                                  ),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
