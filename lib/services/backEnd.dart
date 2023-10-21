@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:chatbot/services/open_ai.dart';
 import 'package:http/http.dart' as http;
 import 'package:chatbot/utils/logger.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class BackendServices implements Implementlog {
   @override
@@ -35,7 +36,8 @@ class BackendServices implements Implementlog {
   Future<String> openAI({required String text}) async {
     var urlString = "https://api.openai.com/v1/completions";
     var url = Uri.parse(urlString);
-
+    String api = "sk";
+    var key = dotenv.env['key'];
     var body = jsonEncode({
       "model": "gpt-3.5-turbo-instruct",
       "prompt": text,
@@ -44,7 +46,7 @@ class BackendServices implements Implementlog {
     });
     Map<String, String> headers = {
       "Content-Type": "application/json",
-      "Authorization": "Bearer ${api + "-" + key}",
+      "Authorization": "Bearer ${api + "-" + key.toString()}",
     };
     final response = await http.post(url, headers: headers, body: body);
     final jsonResponse = json.decode(response.body);

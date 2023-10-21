@@ -1,8 +1,10 @@
 import 'package:chatbot/pages/inter_department_chats/inter_department_chat_page.dart';
 import 'package:chatbot/utils/colorData.dart';
+import 'package:chatbot/utils/logger.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({super.key});
@@ -42,7 +44,9 @@ class _NotificationPageState extends State<NotificationPage> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const InterDepartmentChatPage()),
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const InterDepartmentChatPage()),
                     );
                   },
                   child: Container(
@@ -60,7 +64,7 @@ class _NotificationPageState extends State<NotificationPage> {
                         CircleAvatar(
                           minRadius: 30,
                           maxRadius: 30,
-                            backgroundColor: Colors.black,
+                          backgroundColor: Colors.black,
                         ),
                         SizedBox(
                           width: 10,
@@ -68,14 +72,16 @@ class _NotificationPageState extends State<NotificationPage> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            txt("Department Name",
+                            txt(
+                              "Department Name",
                               weight: FontWeight.w500,
                               size: 18,
                             ),
                             Container(
                               width: 250,
                               // color: Colors.amber,
-                              child: txt("this is the latest message from the department hello there how are doing now a days",
+                              child: txt(
+                                "this is the latest message from the department hello there how are doing now a days",
                                 weight: FontWeight.w200,
                                 textAlign: TextAlign.start,
                                 maxLine: 2,

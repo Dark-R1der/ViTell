@@ -7,11 +7,13 @@ import 'package:chatbot/pages/organisation/controller/organisationPageController
 import 'package:chatbot/utils/colorData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 
 import 'pages/inter_department_chats/controller/inter_department_chat_controller.dart';
 
-void main() {
+Future main() async {
+  await dotenv.load(fileName: "lib/.env");
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Color(0xFF16C3CE), // Set status bar color
       systemNavigationBarColor:ColorData.themeColor,
