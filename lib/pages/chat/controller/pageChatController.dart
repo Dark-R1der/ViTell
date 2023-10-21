@@ -1,10 +1,8 @@
-import 'dart:collection';
 import 'package:chatbot/pages/chat/chattingPage.dart';
 import 'package:chatbot/pages/chat/emptyChat.dart';
 import 'package:chatbot/pages/chat/model/chatMessages.dart';
 import 'package:chatbot/pages/chat/model/chatTile.dart';
 import 'package:chatbot/pages/chat/previousChat.dart';
-import 'package:chatbot/utils/logger.dart';
 import 'package:flutter/foundation.dart';
 
 class PageChatController with ChangeNotifier {

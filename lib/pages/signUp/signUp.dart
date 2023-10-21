@@ -102,7 +102,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   txt("I agree to ChatBot_AI"),
                   txt(
                     " Terms & Conditions",
-                    color: Color(0xFF17C3CE),
+                    color: const Color(0xFF17C3CE),
                   )
                 ],
               ),
@@ -115,15 +115,15 @@ class _SignUpPageState extends State<SignUpPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => CompleteProfilePage()),
+                        builder: (context) => const CompleteProfilePage()),
                   );
                 },
                 child: Container(
                   decoration: BoxDecoration(
                     color: const Color(0xFF17C3CE),
                     borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      const BoxShadow(
+                    boxShadow: const [
+                      BoxShadow(
                         color: Color(0xFF17C3CE), // Shadow color
                         blurRadius: 10, // Spread radius
                         offset: Offset(0, 2), // Offset of the shadow
@@ -159,7 +159,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Navigator.pop(context);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SignInPage()),
+                    MaterialPageRoute(builder: (context) => const SignInPage()),
                   );
                 },
                 child: Row(
@@ -168,7 +168,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     txt("Already have an account"),
                     txt(
                       "  Sign In",
-                      color: Color(0xFF17C3CE),
+                      color: const Color(0xFF17C3CE),
                     ),
                   ],
                 ),
@@ -212,7 +212,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
-                    child: Container(
+                    child: SizedBox(
                         height: 35,
                         width: 35,
                         child: Image.asset("assets/icons/google.png")),

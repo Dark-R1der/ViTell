@@ -76,7 +76,7 @@ class EmptyChat extends StatelessWidget {
                 Consumer<PageChatController>(builder: (context, data, child) {
                   return Expanded(
                     child: ListView.separated(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       separatorBuilder: (context, index) => const SizedBox(
                         height: 20,
                       ),

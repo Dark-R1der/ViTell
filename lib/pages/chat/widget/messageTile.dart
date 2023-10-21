@@ -1,5 +1,4 @@
 import 'package:chatbot/pages/chat/model/chatMessages.dart';
-import 'package:chatbot/utils/logger.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 

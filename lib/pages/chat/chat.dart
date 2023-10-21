@@ -1,8 +1,5 @@
 import 'package:chatbot/pages/chat/controller/pageChatController.dart';
-import 'package:chatbot/pages/inter_department_chats/controller/inter_department_chat_controller.dart';
 import 'package:chatbot/services/backEnd.dart';
-import 'package:chatbot/utils/logger.dart';
-import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -28,11 +25,11 @@ class _ChatPageState extends State<ChatPage> {
             Positioned(
                 bottom: 70,
                 child: Padding(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     right: 18,
                     left: 18,
                   ),
-                  child: Container(
+                  child: SizedBox(
                     // height: 100,
                     width: 320,
                     // color: Colors.amber,
@@ -96,8 +93,7 @@ class _ChatPageState extends State<ChatPage> {
                             text: responseText,
                             isSender: false,
                           );
-                          String titlePass = data.messagesCon[0].text +
-                              "Give me a title related to the question here it should be only two words.";
+                          String titlePass = "${data.messagesCon[0].text}Give me a title related to the question here it should be only two words.";
                           var responseTitle = await backendServices.openAI(
                             text: titlePass,
                           );

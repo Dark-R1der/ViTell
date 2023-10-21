@@ -24,8 +24,8 @@ class _LoaderWidgetState extends State<LoaderWidget> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(400),
                   color: index.isEven
-                      ? Color.fromARGB(255, 25, 197, 209)
-                      : Color.fromARGB(255, 13, 90, 96),
+                      ? const Color.fromARGB(255, 25, 197, 209)
+                      : const Color.fromARGB(255, 13, 90, 96),
                 ),
               );
             },

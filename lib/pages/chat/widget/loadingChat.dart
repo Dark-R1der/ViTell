@@ -21,7 +21,7 @@ class LoadingChat extends StatelessWidget {
               bottomRight: Radius.circular(10),
             ),
           ),
-          child: ThreeDots(),
+          child: const ThreeDots(),
         ),
       ],
     );

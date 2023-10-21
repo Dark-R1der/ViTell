@@ -1,7 +1,6 @@
 import 'package:chatbot/pages/introduction/controller/introPageController.dart';
 import 'package:chatbot/pages/introduction/widgets/dots.dart';
 import 'package:chatbot/pages/signUp/signIn.dart';
-import 'package:flutter_screen_lock/flutter_screen_lock.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +38,7 @@ class _IntroPageState extends State<IntroPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignInPage()),
+                      MaterialPageRoute(builder: (context) => const SignInPage()),
                     );
                   },
                   child: txt(
@@ -57,9 +56,9 @@ class _IntroPageState extends State<IntroPage> {
               int index = page.pageIndex;
               return Column(
                 children: [
-                  if (index == 0) IntroPage0(),
-                  if (index == 1) IntroPage1(),
-                  if (index == 2) IntroPage2(),
+                  if (index == 0) const IntroPage0(),
+                  if (index == 1) const IntroPage1(),
+                  if (index == 2) const IntroPage2(),
                 ],
               );
             }),
@@ -67,14 +66,14 @@ class _IntroPageState extends State<IntroPage> {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  DotsNavigation(),
+                  const DotsNavigation(),
                   GestureDetector(
                     onTap: () {
                       page.chagnePageIndex();
                       if (page.pageIndex == 3) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SignInPage()),
+                          MaterialPageRoute(builder: (context) => const SignInPage()),
                         );
                       }
                     },
@@ -91,7 +90,7 @@ class _IntroPageState extends State<IntroPage> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(60),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.black,
                         ),
@@ -122,7 +121,7 @@ class IntroPage0 extends StatelessWidget {
           height: 80,
         ),
         Center(
-          child: Container(
+          child: SizedBox(
               height: 335,
               width: 335,
               child: Image.asset('assets/vectorImages/robotIntro1.png')),
@@ -163,7 +162,7 @@ class IntroPage1 extends StatelessWidget {
           height: 80,
         ),
         Center(
-          child: Container(
+          child: SizedBox(
               height: 335,
               width: 335,
               child: Image.asset('assets/vectorImages/robotIntro2.png')),
@@ -201,7 +200,7 @@ class IntroPage2 extends StatelessWidget {
     return Consumer<PageIndex>(builder: (context, page, child) {
       int index = page.pageIndex;
       return AnimatedOpacity(
-        duration: Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
         opacity: index == 2 ? 1 : 0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -210,7 +209,7 @@ class IntroPage2 extends StatelessWidget {
               height: 80,
             ),
             Center(
-              child: Container(
+              child: SizedBox(
                   height: 325,
                   width: 325,
                   child: Image.asset('assets/vectorImages/robotIntro3.png')),

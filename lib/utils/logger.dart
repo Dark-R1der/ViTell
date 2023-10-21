@@ -47,7 +47,7 @@ class Logger {
 
   static void logA(String message) {
     if (showLogs) {
-      print('😽' + "➡️" + message);
+      print('😽' "➡️" + message);
     }
   }
 }

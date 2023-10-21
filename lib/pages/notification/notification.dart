@@ -2,7 +2,6 @@ import 'package:chatbot/pages/inter_department_chats/inter_department_chat_page.
 import 'package:chatbot/utils/colorData.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({super.key});
@@ -52,17 +51,17 @@ class _NotificationPageState extends State<NotificationPage> {
                       borderRadius: BorderRadius.circular(20),
                       color: ColorData.textColorGrey,
                     ),
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           minRadius: 30,
                           maxRadius: 30,
                             backgroundColor: Colors.black,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Column(
@@ -72,7 +71,7 @@ class _NotificationPageState extends State<NotificationPage> {
                               weight: FontWeight.w500,
                               size: 18,
                             ),
-                            Container(
+                            SizedBox(
                               width: 250,
                               // color: Colors.amber,
                               child: txt("this is the latest message from the department hello there how are doing now a days",
@@ -84,7 +83,7 @@ class _NotificationPageState extends State<NotificationPage> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         CircleAvatar(

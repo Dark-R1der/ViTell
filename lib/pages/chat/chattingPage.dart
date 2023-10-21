@@ -1,4 +1,3 @@
-import 'package:chatbot/pages/chat/chat.dart';
 import 'package:chatbot/pages/chat/controller/pageChatController.dart';
 import 'package:chatbot/pages/chat/widget/messageTile.dart';
 import 'package:chatbot/utils/textUtil.dart';

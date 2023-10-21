@@ -1,5 +1,4 @@
 import 'package:chatbot/pages/chat/controller/pageChatController.dart';
-import 'package:chatbot/pages/chat/widget/previous_chat_tile.dart';
 import 'package:chatbot/utils/logger.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';

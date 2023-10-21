@@ -1,5 +1,4 @@
 import 'package:chatbot/pages/home/homePage.dart';
-import 'package:chatbot/pages/introduction/introPage.dart';
 import 'package:chatbot/pages/signUp/signUp.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +17,12 @@ class _SignInPageState extends State<SignInPage> {
     final value = _emailController.value.text;
     RegExp regExp1 = RegExp(r"@gov\.in$");
     RegExp regExp2 = RegExp(r"@nic\.in$");
-    if (value == null || value.isEmpty) {
+    if (value.isEmpty) {
       return 'Email is required';
     } else if (regExp1.hasMatch(value) && regExp2.hasMatch(value)) {
       return 'Email must contain @gov.in or @nic.in';
     }
+    return null;
     // return null;
   }
 
@@ -134,7 +134,7 @@ class _SignInPageState extends State<SignInPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => const HomePage(),
                     ),
                   );
                 },
@@ -142,8 +142,8 @@ class _SignInPageState extends State<SignInPage> {
                   decoration: BoxDecoration(
                     color: const Color(0xFF17C3CE),
                     borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      const BoxShadow(
+                    boxShadow: const [
+                      BoxShadow(
                         color: Color(0xFF17C3CE), // Shadow color
                         blurRadius: 10, // Spread radius
                         offset: Offset(0, 2), // Offset of the shadow
@@ -229,7 +229,7 @@ class _SignInPageState extends State<SignInPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
-                    child: Container(
+                    child: SizedBox(
                         height: 35,
                         width: 35,
                         child: Image.asset("assets/icons/google.png")),

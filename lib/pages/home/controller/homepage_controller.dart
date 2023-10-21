@@ -1,4 +1,3 @@
-import 'dart:collection';
 
 import 'package:chatbot/pages/chat/chat.dart';
 import 'package:chatbot/pages/news/news.dart';

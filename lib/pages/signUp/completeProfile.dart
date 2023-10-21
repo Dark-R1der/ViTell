@@ -14,13 +14,14 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
 
   String? get _errorText {
     final value = _phoneNumberController.value.text;
-    if (value == null || value.isEmpty) {
+    if (value.isEmpty) {
       return 'Phone number is required';
     } else if (value.length != 10) {
       return 'Phone number must be 10 digits';
     } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
       return 'Phone number should only contain numbers';
     }
+    return null;
     // return null;
   }
 
@@ -60,7 +61,7 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                 child: Stack(
                   children: [
                     Image.asset("assets/vectorImages/avatar.png"),
-                    Positioned(
+                    const Positioned(
                       bottom: 10,
                       right: 0,
                       child: CircleAvatar(
@@ -101,18 +102,18 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                 controller: _phoneNumberController,
                 decoration: InputDecoration(
                   errorText: _errorText,
-                  suffixIcon: Icon(
+                  suffixIcon: const Icon(
                     Icons.call_outlined,
                     color: Colors.grey,
                   ),
                   labelText: 'Phone Number',
-                  enabledBorder: UnderlineInputBorder(
+                  enabledBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(
                         color: Color(
                             0xFF17C3CE)), // Change the underline color when not focused
                   ),
-                  labelStyle: TextStyle(color: Colors.black),
-                  focusedBorder: OutlineInputBorder(
+                  labelStyle: const TextStyle(color: Colors.black),
+                  focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(
                         color: Colors.blue), // Change the border color on focus
                   ),
@@ -202,13 +203,13 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                         child: txt(
                           'Skip',
                           weight: FontWeight.w400,
-                          color: Color(0xFF17C3CE),
+                          color: const Color(0xFF17C3CE),
                           size: 24,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   InkWell(
@@ -217,7 +218,7 @@ class _CompleteProfilePageState extends State<CompleteProfilePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => HomeStartPage()),
+                            builder: (context) => const HomeStartPage()),
                       );
                     },
                     child: Container(

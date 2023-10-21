@@ -25,7 +25,7 @@ class SavedChats extends StatelessWidget {
               right: 16,
             ),
             child: data.chatFullSave.isEmpty
-                ? LoaderWidget()
+                ? const LoaderWidget()
                 : Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,

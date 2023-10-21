@@ -1,4 +1,3 @@
-import 'package:chatbot/pages/chat/model/chatMessages.dart';
 import 'package:chatbot/pages/chat/widget/messageTile.dart';
 import 'package:chatbot/pages/inter_department_chats/controller/inter_department_chat_controller.dart';
 import 'package:chatbot/utils/textUtil.dart';
@@ -23,7 +22,7 @@ class _InterDepartmentChatPageState extends State<InterDepartmentChatPage> {
         centerTitle: false,
         title: Row(
           children: [
-            Container(
+            SizedBox(
               height: 40,
               width: 30,
               child: InkWell(
@@ -79,7 +78,7 @@ class _InterDepartmentChatPageState extends State<InterDepartmentChatPage> {
             ),
             Positioned(
                 bottom: 10,
-                child: Container(
+                child: SizedBox(
                   // height: 100,
                   width: 320,
                   // color: Colors.amber,

@@ -20,7 +20,7 @@ class DotsNavigation extends StatelessWidget {
               ),
             ),
           if (page.pageIndex == 0)
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
           if (page.pageIndex == 0)
@@ -30,7 +30,7 @@ class DotsNavigation extends StatelessWidget {
               minRadius: 2,
             ),
           if (page.pageIndex == 0)
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
           if (page.pageIndex == 0)
@@ -46,7 +46,7 @@ class DotsNavigation extends StatelessWidget {
               minRadius: 2,
             ),
           if (page.pageIndex == 1)
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
           if (page.pageIndex == 1)
@@ -59,7 +59,7 @@ class DotsNavigation extends StatelessWidget {
               ),
             ),
           if (page.pageIndex == 1)
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
           if (page.pageIndex == 1)
@@ -75,7 +75,7 @@ class DotsNavigation extends StatelessWidget {
               minRadius: 2,
             ),
           if (page.pageIndex == 2)
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
           if (page.pageIndex == 2)
@@ -85,7 +85,7 @@ class DotsNavigation extends StatelessWidget {
               minRadius: 2,
             ),
           if (page.pageIndex == 2)
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
           if (page.pageIndex == 2)

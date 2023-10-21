@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:chatbot/pages/news/news.dart';
 import 'package:chatbot/pages/organisation/controller/organisationPageController.dart';
 import 'package:chatbot/pages/organisation/model/organisation_details.dart';
 import 'package:chatbot/services/backEnd.dart';
@@ -22,7 +21,7 @@ class _OrganisationPageState extends State<OrganisationPage> {
   List<dynamic> sections = [];
   List<Map<String, dynamic>> allData = [];
   List<OrganisationDetails> departmentDetails = [];
-  BackendServices _backendServices = BackendServices();
+  final BackendServices _backendServices = BackendServices();
   Future<void> loadJsonData() async {
     final String jsonContent =
         await rootBundle.loadString('assets/jsons/organisations.json');
@@ -118,10 +117,10 @@ class _OrganisationPageState extends State<OrganisationPage> {
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         width: 2,
-                                        color: Color.fromARGB(255, 13, 90, 96),
+                                        color: const Color.fromARGB(255, 13, 90, 96),
                                       ),
                                       color: data.selectedIndex == index
-                                          ? Color.fromARGB(255, 13, 90, 96)
+                                          ? const Color.fromARGB(255, 13, 90, 96)
                                           : Colors.white,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
@@ -130,7 +129,7 @@ class _OrganisationPageState extends State<OrganisationPage> {
                                           size: 14,
                                           color: data.selectedIndex == index
                                               ? Colors.white
-                                              : Color.fromARGB(
+                                              : const Color.fromARGB(
                                                   255, 13, 90, 96)),
                                     ),
                                   ),
@@ -217,7 +216,7 @@ class _OrganisationPageState extends State<OrganisationPage> {
                                                     ),
                                                   ),
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 5,
                                                 ),
                                                 txt(
@@ -229,14 +228,14 @@ class _OrganisationPageState extends State<OrganisationPage> {
                                                   // weight: FontWeight.w600,
                                                   maxLine: 2,
                                                 ),
-                                                SizedBox(
+                                                const SizedBox(
                                                   height: 5,
                                                 ),
                                                 txt(
                                                   sections[ind]['items'][index]
                                                       ['description'],
                                                   size: 12,
-                                                  color: Color(0xFF919191),
+                                                  color: const Color(0xFF919191),
                                                   textAlign: TextAlign.start,
                                                   // weight: FontWeight.w600,
                                                   maxLine: 2,
@@ -293,7 +292,7 @@ class _OrganisationPageState extends State<OrganisationPage> {
             );
           } else {
             // Data is still loading, you can show a loading indicator here.
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
         },
       ),

@@ -31,7 +31,7 @@ class PreviousChatTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 txt(title, weight: FontWeight.w600, size: 0.026 * sizeH),
-                Container(
+                SizedBox(
                   width: 0.76 * sizeW,
                   child: txt(
                     size: 0.014 * sizeH,
@@ -42,7 +42,7 @@ class PreviousChatTile extends StatelessWidget {
                 )
               ],
             ),
-            IconButton(
+            const IconButton(
                 onPressed: null,
                 icon: Icon(
                   Icons.arrow_forward_ios,
