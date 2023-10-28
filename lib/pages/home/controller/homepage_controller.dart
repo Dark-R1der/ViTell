@@ -1,8 +1,8 @@
-
 import 'package:chatbot/pages/chat/chat.dart';
 import 'package:chatbot/pages/news/news.dart';
 import 'package:chatbot/pages/notification/notification.dart';
 import 'package:chatbot/pages/organisation/organisationPage.dart';
+import 'package:chatbot/pages/profile/profile_page.dart';
 import 'package:chatbot/pages/saved/savedChats.dart';
 import 'package:chatbot/utils/logger.dart';
 import 'package:flutter/material.dart';
@@ -14,12 +14,13 @@ class HomePageController with ChangeNotifier {
     const NotificationPage(),
     const ChatPage(),
     const NewPage(),
-    const SavedChats()
+    ProfilePage(),
+    // const SavedChats()
   ];
 
   void newScreenIndex(int newScreenIndex) {
     pageIndex = newScreenIndex;
-    Logger.logA(pageIndex.toString());
+    // Logger.logA(pageIndex.toString());
     notifyListeners();
   }
 }

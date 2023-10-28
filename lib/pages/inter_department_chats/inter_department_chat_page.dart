@@ -1,19 +1,20 @@
 import 'package:chatbot/pages/chat/widget/messageTile.dart';
 import 'package:chatbot/pages/inter_department_chats/controller/inter_department_chat_controller.dart';
+import 'package:chatbot/pages/notification/model/noti_model.dart';
+import 'package:chatbot/utils/appSizeUtil.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class InterDepartmentChatPage extends StatefulWidget {
-  const InterDepartmentChatPage({super.key});
-
+  InterDepartmentChatPage({required this.departmentCommunication, super.key});
+  NotificationModel departmentCommunication;
   @override
   State<InterDepartmentChatPage> createState() =>
       _InterDepartmentChatPageState();
 }
 
 class _InterDepartmentChatPageState extends State<InterDepartmentChatPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,18 +39,30 @@ class _InterDepartmentChatPageState extends State<InterDepartmentChatPage> {
             const SizedBox(
               width: 5,
             ),
-            const CircleAvatar(
-              maxRadius: 25,
-              minRadius: 25,
-              backgroundColor: Colors.black,
+            Container(
+              height: 55,
+              width: 55,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(widget.departmentCommunication.imageUrl),
+                  fit: BoxFit.contain,
+                ),
+                // color: Colors.amber,
+                borderRadius: BorderRadius.circular(55),
+              ),
             ),
             const SizedBox(
               width: 5,
             ),
-            txt(
-              "Department Name",
-              weight: FontWeight.w500,
-              size: 24,
+            Container(
+              // color: Colors.amber,
+              width: w(context) * 0.69,
+              child: txt(
+                maxLine: 1,
+                widget.departmentCommunication.title,
+                weight: FontWeight.w500,
+                size: 24,
+              ),
             ),
           ],
         ),
@@ -65,13 +78,16 @@ class _InterDepartmentChatPageState extends State<InterDepartmentChatPage> {
             Consumer<InterDepartmentChatController>(
               builder: (context, page, child) {
                 return ListView.separated(
-                  separatorBuilder: (context, index) => const SizedBox(height: 20),
-                  itemCount: page.messages.length + 1,
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 20),
+                  itemCount: widget.departmentCommunication.messages.length,
                   itemBuilder: (context, index) {
                     if (index == page.messages.length) {
                       return Container(height: 80);
                     }
-                    return MessageTile(message: page.messages[index]);
+                    return MessageTile(
+                        message:
+                            widget.departmentCommunication.messages[index]);
                   },
                 );
               },

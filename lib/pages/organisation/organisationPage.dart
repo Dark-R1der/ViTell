@@ -31,7 +31,7 @@ class _OrganisationPageState extends State<OrganisationPage> {
 
   void loadDepartmentDetails() async {
     for (int i = 0; i < sections.length; i++) {
-      Logger.logA("${sections[i]['items'].length}");
+      // Logger.logA("${sections[i]['items'].length}");
       for (int j = 0; j < sections[i]['items'].length; j++) {
         OrganisationDetails temp = OrganisationDetails(
             imageUrl: sections[i]['items'][j]['imageurl'],
@@ -77,8 +77,6 @@ class _OrganisationPageState extends State<OrganisationPage> {
         centerTitle: true,
         automaticallyImplyLeading: false,
         title: txt("Organisations", size: 26, weight: FontWeight.w400),
-
-
       ),
       body: FutureBuilder<void>(
         future: loadJsonData(),
@@ -117,10 +115,12 @@ class _OrganisationPageState extends State<OrganisationPage> {
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         width: 2,
-                                        color: const Color.fromARGB(255, 13, 90, 96),
+                                        color: const Color.fromARGB(
+                                            255, 13, 90, 96),
                                       ),
                                       color: data.selectedIndex == index
-                                          ? const Color.fromARGB(255, 13, 90, 96)
+                                          ? const Color.fromARGB(
+                                              255, 13, 90, 96)
                                           : Colors.white,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
@@ -179,8 +179,8 @@ class _OrganisationPageState extends State<OrganisationPage> {
                                             sections[ind]['items'].length,
                                         itemBuilder:
                                             (BuildContext context, int index) {
-                                          Logger.logA(
-                                              "${sections[ind]['items'].length}");
+                                          // Logger.logA(
+                                          //     "${sections[ind]['items'].length}");
                                           int randomIndex =
                                               random.nextInt(colorList.length);
                                           return Container(
@@ -235,7 +235,8 @@ class _OrganisationPageState extends State<OrganisationPage> {
                                                   sections[ind]['items'][index]
                                                       ['description'],
                                                   size: 12,
-                                                  color: const Color(0xFF919191),
+                                                  color:
+                                                      const Color(0xFF919191),
                                                   textAlign: TextAlign.start,
                                                   // weight: FontWeight.w600,
                                                   maxLine: 2,

@@ -90,6 +90,9 @@ flutter:
     - assets/icons/copy.png
     - assets/jsons/organisations.json
     - lib/.env
+    - assets/images/profile_photo_dp.jpeg
+    - assets/vectorImages/profile_rank.png
+    - assets/jsons/notification.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

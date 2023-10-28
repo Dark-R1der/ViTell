@@ -66,12 +66,12 @@ class _PreviousChatState extends State<PreviousChat> {
                                 title: data.chatFull[index].title,
                               );
                               data.chatFull.removeAt(index);
-                              Logger.logA("Code removed");
+                              // Logger.logA("Code removed");
                             } else if (direction ==
                                 DismissDirection.endToStart) {
                               // Handle right swipe (remove from list)
                               data.chatFull.removeAt(index);
-                              Logger.logA("Code saved");
+                              // Logger.logA("Code saved");
                             }
 
                             // Check if the list is empty and update the page index accordingly
