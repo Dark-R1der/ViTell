@@ -10,7 +10,6 @@ class SavedChats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double sizeH = MediaQuery.of(context).size.height;
-    double sizeW = MediaQuery.of(context).size.width;
     return Consumer<PageChatController>(
       builder: (context, data, child) {
         return Padding(
