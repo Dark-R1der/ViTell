@@ -47,15 +47,13 @@ class _InterDepartmentChatPageState extends State<InterDepartmentChatPage> {
                   image: NetworkImage(widget.departmentCommunication.imageUrl),
                   fit: BoxFit.contain,
                 ),
-                // color: Colors.amber,
                 borderRadius: BorderRadius.circular(55),
               ),
             ),
             const SizedBox(
               width: 5,
             ),
-            Container(
-              // color: Colors.amber,
+            SizedBox(
               width: w(context) * 0.69,
               child: txt(
                 maxLine: 1,
@@ -82,9 +80,9 @@ class _InterDepartmentChatPageState extends State<InterDepartmentChatPage> {
                       const SizedBox(height: 20),
                   itemCount: widget.departmentCommunication.messages.length,
                   itemBuilder: (context, index) {
-                    if (index == page.messages.length) {
-                      return Container(height: 80);
-                    }
+                    // if (index + 1 == page.messages.length) {
+                    //   return Container(height: 80);
+                    // }
                     return MessageTile(
                         message:
                             widget.departmentCommunication.messages[index]);
