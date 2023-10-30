@@ -5,23 +5,23 @@
       "Name": "Intelligence Bureau",
       "Message": [
         {
-          "isSender": true,
+          "isSender": false,
           "message": "Hello, what is the update on case file 31/10/2011/1592?"
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "What enquiry is being held on the culprit, Saurabh Jaiswal?"
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Sir, the case is under trial at this moment and the next hearing is on 31/10/23."
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "We have investigated the case properly and we are still looking for any new information about the case."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "Okay, thanks for the info."
         }
       ]
@@ -32,43 +32,43 @@
       "Name": "Research and Analysis Wing",
       "Message": [
         {
-          "isSender": true,
+          "isSender": false,
           "message": "Which officer of your department is allocated the Jhumri region in Bihar?"
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Mr. Ankit Kumar is situated as the SI in the Jhumri region."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "What are his connections with the local informants in that region?"
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Sir, he has an active informant network in the region."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "What about his informant network in nearby regions?"
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "According to my information, he also has contacts with the informants in nearby regions. You may contact him for in-depth details."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "Okay, just give me his contact details."
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Yes sir, his mobile number is 9834210234. He resides in the police quarters in Jhumri."
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Will you need anything else?"
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "No, that would be enough. Thank you."
         }
       ]
@@ -79,11 +79,11 @@
       "Name": "Defence Intelligence Agency",
       "Message": [
         {
-          "isSender": true,
+          "isSender": false,
           "message": "How many victims are there in the recent train crash incident in Odisha?"
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "And what is the number of people who died and who were seriously injured?"
         },
         {
@@ -95,7 +95,7 @@
           "message": "34 people have died, and 124 are seriously injured and currently undergoing treatment."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "Okay."
         }
       ]
@@ -106,39 +106,39 @@
       "Name": "Directorate of Intelligence Agency",
       "Message": [
         {
-          "isSender": true,
+          "isSender": false,
           "message": "What is the monthly crime report in your division?"
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Sir, there have been a total of 43 FIRs filed in my division, and the crime rate stands at 9.2% less than the previous month."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "How many missing people were reported last month?"
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "And what is the number of kidnappings that took place?"
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Sir, the number of missing people is 6, and 11 kidnappings have been reported."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "Has there been any case of a boy under 10 years going missing or being kidnapped?"
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Yes sir, there was a boy named Rahul Subramaniam, who reportedly went missing on 21st October."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "Okay, I will get back to you if more information is required on the case."
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Sure sir."
         }
       ]
@@ -149,31 +149,31 @@
       "Name": "Securities and Exchange Board of India",
       "Message": [
         {
-          "isSender": true,
+          "isSender": false,
           "message": "There was a recent protest in your area, in front of the SEBI office."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "The protest took a violent turn, and there were stones pelted at the employees."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "What actions have you taken for this?"
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Sir, we have launched an investigation into this. We have formulated a team that is specially handling this case."
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "We have already taken two people into custody who were part of the group that started throwing stones. We will soon have a complete report of the above forwarded to you."
         },
         {
-          "isSender": true,
+          "isSender": false,
           "message": "Yes, please do it as soon as possible."
         },
         {
-          "isSender": false,
+          "isSender": true,
           "message": "Sure sir."
         }
       ]
