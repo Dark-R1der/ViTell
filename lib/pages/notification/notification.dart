@@ -46,7 +46,7 @@ class _NotificationPageState extends State<NotificationPage> {
       Logger.logH("${notificationList[0].title}");
       // notifyListeners();
     } catch (e, stackTrace) {
-      // Logger.logE("Error: $e, StackTrace: $stackTrace");
+      Logger.logA("Error: $e, StackTrace: $stackTrace");
     }
   }
 
