@@ -1,7 +1,13 @@
+import 'dart:convert';
+
 import 'package:chatbot/pages/news/controller/news_controller.dart';
+import 'package:chatbot/pages/news/model/news_model.dart';
+import 'package:chatbot/utils/appSizeUtil.dart';
 import 'package:chatbot/utils/colorData.dart';
+import 'package:chatbot/utils/logger.dart';
 import 'package:chatbot/utils/textUtil.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:scaled_list/scaled_list.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -47,6 +53,40 @@ class _NewPageState extends State<NewPage> {
     Category(image: "assets/images/4.png", name: "Lamb"),
     Category(image: "assets/images/5.png", name: "Pasta"),
   ];
+  List<NewsModel> newsTop = [];
+  List<NewsModel> newsHead = [];
+  void loadNewsFromJson() async {
+    String data = await rootBundle.loadString('assets/jsons/news.json');
+    List<dynamic> jsonData = json.decode(data);
+    for (int i = 0; i < jsonData.length; i++) {
+      NewsModel temp = NewsModel(
+        title: jsonData[i]['title'].toString(),
+        fullDes: jsonData[i]['full_news'].toString(),
+        image: jsonData[i]['image'].toString(),
+        shortDes: jsonData[i]['short_description'].toString(),
+      );
+      if (i < 5) {
+        newsTop.add(temp);
+      } else {
+        newsHead.add(temp);
+      }
+    }
+    Future.delayed(const Duration(milliseconds: 500), () {
+// Here you can write your code
+
+      setState(() {
+        // Here you can write your code for open new view
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    loadNewsFromJson();
+    // Logger.logA("${news}");
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,9 +110,22 @@ class _NewPageState extends State<NewPage> {
                 padding: const EdgeInsets.only(left: 12.0),
                 child: txt("Top News", weight: FontWeight.w500, size: 24),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
+              // Container(
+              //   height: 200,
+              //   child: ListView.separated(
+              //       separatorBuilder: (context, index) {
+              //         return SizedBox(
+              //           width: 20,
+              //         );
+              //       },
+              //       itemCount: 2,
+              //       itemBuilder: (context, index) {
+              //         return txt(news[index].title);
+              //       }),
+              // ),
               Consumer<NewsController>(
                 builder: (context, data, child) {
                   return CarouselSlider(
@@ -83,21 +136,43 @@ class _NewPageState extends State<NewPage> {
                       aspectRatio: 12 / 9,
                       autoPlayCurve: Curves.fastOutSlowIn,
                       enableInfiniteScroll: true,
-                      autoPlayAnimationDuration: Duration(milliseconds: 600),
+                      autoPlayAnimationDuration: Duration(milliseconds: 500),
                       viewportFraction: 0.8,
                       onPageChanged: (index, reason) {
                         data.changeCenterSliderIndex(index);
                       },
                     ),
-                    items: photoList
+                    items: newsTop
                         .map(
-                          (item) => Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: NetworkImage(item), fit: BoxFit.cover),
+                          (item) => Stack(children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(item.image),
+                                    fit: BoxFit.cover),
+                              ),
                             ),
-                          ),
+                            Positioned(
+                              bottom: 10,
+                              left: 10,
+                              child: Container(
+                                height: 35,
+                                width: 200,
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.grey.withOpacity(0.7),
+                                ),
+                                child: txt(
+                                  item.title,
+                                  weight: FontWeight.w600,
+                                  size: 24,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ]),
                         )
                         .toList(),
                   );
@@ -141,7 +216,7 @@ class _NewPageState extends State<NewPage> {
                   padding: const EdgeInsets.only(top: 8.0, right: 12, left: 12),
                   child: ListView.separated(
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: sampleNewLength + 1,
+                    itemCount: newsHead.length,
                     separatorBuilder: (context, index) => const SizedBox(
                       height: 20,
                     ),
@@ -164,15 +239,19 @@ class _NewPageState extends State<NewPage> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                txt(
-                                  "New title ${index}",
-                                  weight: FontWeight.w500,
-                                  size: 24,
+                                Container(
+                                  width: w(context) * 0.74,
+                                  child: txt(
+                                    newsHead[index].title,
+                                    maxLine: 1,
+                                    weight: FontWeight.w500,
+                                    size: 24,
+                                  ),
                                 ),
                                 Container(
                                   width: 300,
                                   child: txt(
-                                    "Some description for the news just to give a breif of what exactly is the news about and orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+                                    newsHead[index].shortDes,
                                     weight: FontWeight.w500,
                                     maxLine: 2,
                                     // color: Col,
@@ -189,7 +268,7 @@ class _NewPageState extends State<NewPage> {
                                 borderRadius: BorderRadius.circular(20),
                                 image: DecorationImage(
                                   image: NetworkImage(
-                                    "https://www.hindustantimes.com/ht-img/img/2023/08/18/550x309/ANI-20230817006-0_1692392764192_1692392789439.jpg",
+                                    newsHead[index].image.toString(),
                                   ),
                                   fit: BoxFit.cover,
                                 ),

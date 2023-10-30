@@ -51,7 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   width: h(context) * 0.2,
                   decoration: BoxDecoration(
                     image: const DecorationImage(
-                      image: AssetImage("assets/images/profile_photo_dp.jpeg"),
+                      image: AssetImage("assets/images/dummy_profile_dp.jpg"),
                       fit: BoxFit.fill,
                     ),
                     borderRadius: BorderRadius.circular(200),

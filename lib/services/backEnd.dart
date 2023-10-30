@@ -5,7 +5,6 @@ import 'package:chatbot/utils/logger.dart';
 
 class BackendServices implements Implementlog {
   @override
-  // TODO: implement showLogs
   bool get showLogs => true;
   @override
   void log(message, functionName, {LogType logType = LogType.info}) {
