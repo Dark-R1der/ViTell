@@ -100,7 +100,7 @@ class _OrganisationPageState extends State<OrganisationPage> {
                                 width: 5,
                               ),
                               scrollDirection: Axis.horizontal,
-                              itemCount: sections.length,
+                              itemCount: 3,
                               itemBuilder: (BuildContext context, int index) {
                                 return InkWell(
                                   onTap: () => data.changeSelectedIndex(index),
@@ -143,7 +143,7 @@ class _OrganisationPageState extends State<OrganisationPage> {
                         height: 654,
                         width: double.infinity,
                         child: ListView.builder(
-                            itemCount: category.length,
+                            itemCount: 3,
                             itemBuilder: (BuildContext context, int ind) {
                               return Column(
                                 children: [

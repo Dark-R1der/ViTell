@@ -6,7 +6,7 @@ import 'package:chatbot/pages/chat/previousChat.dart';
 import 'package:flutter/foundation.dart';
 
 class PageChatController with ChangeNotifier {
-  String title = "GovBuddy";
+  String title = "HostelBuddy";
   bool isEmpty = true;
   List<ChatMessage> messagesCon = [];
   bool isLoading = false;

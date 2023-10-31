@@ -23,7 +23,7 @@ class HomeStartPage extends StatelessWidget {
                   color: const Color(0xFF17C3CE),
                 ),
                 txt(
-                  'ChatBot AI',
+                  'Hostel AI',
                   size: 36,
                   weight: FontWeight.w400,
                   color: const Color(0xFF17C3CE),
@@ -35,7 +35,7 @@ class HomeStartPage extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                txt("ChatBot AI", color: Colors.grey.shade600, size: 30),
+                txt("Hostel AI", color: Colors.grey.shade600, size: 30),
                 const SizedBox(
                   height: 180,
                 ),

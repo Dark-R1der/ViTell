@@ -82,7 +82,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Image.asset("assets/vectorImages/profile_rank.png"),
-                      txt("Deputy Superintendent Of Police")
+                      txt("Assitant Supervisors")
                     ]),
               ),
               SizedBox(

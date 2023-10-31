@@ -94,7 +94,7 @@ class _NewPageState extends State<NewPage> {
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: txt(
-          "News",
+          "Announcements",
           weight: FontWeight.w600,
           size: 26,
         ),
@@ -108,7 +108,8 @@ class _NewPageState extends State<NewPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 12.0),
-                child: txt("Top News", weight: FontWeight.w500, size: 24),
+                child:
+                    txt("Top Announcements", weight: FontWeight.w500, size: 24),
               ),
               const SizedBox(
                 height: 10,
@@ -206,7 +207,7 @@ class _NewPageState extends State<NewPage> {
               // ),
               Padding(
                 padding: const EdgeInsets.only(left: 12.0),
-                child: txt("Headlines", weight: FontWeight.w500, size: 24),
+                child: txt("Announcements", weight: FontWeight.w500, size: 24),
               ),
               SizedBox(
                 height: 5,

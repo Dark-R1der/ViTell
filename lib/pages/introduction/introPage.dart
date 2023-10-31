@@ -38,7 +38,8 @@ class _IntroPageState extends State<IntroPage> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignInPage()),
+                      MaterialPageRoute(
+                          builder: (context) => const SignInPage()),
                     );
                   },
                   child: txt(
@@ -73,7 +74,8 @@ class _IntroPageState extends State<IntroPage> {
                       if (page.pageIndex == 3) {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const SignInPage()),
+                          MaterialPageRoute(
+                              builder: (context) => const SignInPage()),
                         );
                       }
                     },
@@ -131,7 +133,7 @@ class IntroPage0 extends StatelessWidget {
         ),
         txt("Meet", isBold: true, size: 32, color: Colors.white),
         txt(
-          "GovBuddy",
+          "HostelBuddy",
           isBold: true,
           size: 32,
           color: Colors.white,
@@ -140,7 +142,7 @@ class IntroPage0 extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        txt("Your personal helpdesk, here to enchance the interaction between you and other government bodies",
+        txt("Your personal helpdesk, here to enchance the interaction between you and the officials",
             size: 16, color: Colors.white, textAlign: TextAlign.left),
         const SizedBox(
           height: 80,
@@ -226,7 +228,7 @@ class IntroPage2 extends StatelessWidget {
               height: 15,
             ),
             txt(
-              "Facilitates multilingual communication for government employees.",
+              "Facilitates multilingual communication for everyone.",
               size: 16,
               color: Colors.white,
               textAlign: TextAlign.left,

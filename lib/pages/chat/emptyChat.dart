@@ -69,7 +69,7 @@ class EmptyChat extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                txt("ChatBot AI", color: Colors.grey.shade600, size: 30),
+                txt("Hostel AI", color: Colors.grey.shade600, size: 30),
                 const SizedBox(
                   height: 20,
                 ),
